@@ -12,8 +12,24 @@ namespace PortugueseAttributes.Validators
     {
 
         #region Attributes Properties
+        public Boolean IsRequired { get; set; }
+
+        private String _requiredErrorMessage;
+        public String RequiredErrorMessage
+        {
+            get
+            {
+                return _requiredErrorMessage ?? (_requiredErrorMessage = ValidationMessages.VALIDATION_REQUIRED);
+            }
+
+            set
+            {
+                _requiredErrorMessage = value;
+            }
+        }
+
         private String _invalidErrorMessage;
-        internal String InvalidErrorMessage
+        public String InvalidErrorMessage
         {
             get
             {
@@ -27,7 +43,7 @@ namespace PortugueseAttributes.Validators
         }
 
         private String _formatErrorMessage;
-        internal new String FormatErrorMessage
+        public new String FormatErrorMessage
         {
             get
             {
@@ -41,7 +57,7 @@ namespace PortugueseAttributes.Validators
         }
 
         private String _lengthErrorMessage;
-        internal String LengthErrorMessage
+        public String LengthErrorMessage
         {
             get
             {
@@ -58,9 +74,14 @@ namespace PortugueseAttributes.Validators
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             string obj = value == null ? string.Empty : value.ToString();
-            if(obj.Length != 9)
+            if(!String.IsNullOrEmpty(obj)  && obj.Length != 9)
             {
                 return new ValidationResult(LengthErrorMessage);
+            }
+
+            if(IsRequired && String.IsNullOrEmpty(obj))
+            {
+                return new ValidationResult(RequiredErrorMessage);
             }
 
             try
