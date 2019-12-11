@@ -1,8 +1,9 @@
-﻿using System;
+﻿using NumeroIdentificacaoFiscalAttribute;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NumeroIdentificacaoFiscalAttribute.Helpers
+namespace NumeroIdentificacaoFiscalAttributeValidation.Helpers
 {
     public class NifValidationHelper
     {
@@ -16,7 +17,7 @@ namespace NumeroIdentificacaoFiscalAttribute.Helpers
         {
             if(!Int32.TryParse(nif, out _))
             {
-                throw new FormatException("PT NIFs are integer only");
+                throw new FormatException();
             }
 
             char[] nifAsCharArray = nif.ToCharArray();

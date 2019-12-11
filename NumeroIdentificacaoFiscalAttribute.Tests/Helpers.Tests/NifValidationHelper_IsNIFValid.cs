@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace NumeroIdentificacaoFiscalAttribute.Helpers.Tests
+namespace NumeroIdentificacaoFiscalAttributeValidation.Helpers.Tests
 {
     [TestClass]
     public class NifValidationHelper_IsNIFValid
