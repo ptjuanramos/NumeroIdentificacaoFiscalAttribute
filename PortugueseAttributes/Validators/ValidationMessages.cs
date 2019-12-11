@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NumeroIdentificacaoFiscalAttribute
+namespace PortugueseAttributes.Validators
 {
     class ValidationMessages
     {

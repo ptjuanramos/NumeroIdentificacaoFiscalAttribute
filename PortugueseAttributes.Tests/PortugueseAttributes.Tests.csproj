@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NumeroIdentificacaoFiscalAttribute\NumeroIdentificacaoFiscalAttribute.csproj" />
+    <ProjectReference Include="..\PortugueseAttributes\PortugueseAttributes.csproj" />
   </ItemGroup>
 
 </Project>
